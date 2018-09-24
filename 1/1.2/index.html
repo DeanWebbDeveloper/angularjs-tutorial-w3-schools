@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body>
+
+  <!--
+  <div data-ng-app="">
+
+    <label for="firstName">First Name: </label>
+    <input name="firstName" type="text" data-ng-model="firstName" />
+
+    <div name="lastName" type="text" data-ng-init="lastName='Smith'"></div>
+
+    <p><span data-ng-bind="firstName"></span> <span data-ng-bind="lastName"></span></p>
+
+    <p>The following is an angular expression: {{ 2 * 10 }}</p>
+
+    <label for="age">Age: </label>
+    <input name="age" type="number" data-ng-model="age" />
+
+    <p>Mr./Ms. {{firstName}} {{lastName}} is {{age}} year(s) old.</p>
+
+  </div>
+  -->
+
+  <div data-ng-app="myApp">
+    <div data-ng-controller="myController">
+      <label for="firstName">First Name: </label>
+      <input name="firstName" type="text" ng-model="firstName" />
+      &nbsp;
+      <label for="lastName">Last Name: </label>
+      <input name="lastName" type="text" ng-model="lastName" />
+
+      <p><span ng-bind="firstName"></span> <span>{{lastName}}</span></p>
+    </div>
+  </div>
+
+  <script>
+
+    var app = angular.module('myApp', []);
+
+    app.controller('myController', function($scope) {
+      $scope.firstName  = "John";
+      $scope.lastName   = "Smith";
+    });
+
+  </script>
+
+</body>
+</html>
