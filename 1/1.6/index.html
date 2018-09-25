@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Model</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+
+  <!-- CSS Classes -->
+  <style>
+    input.ng-invalid {
+      background-color: pink;
+    }
+  </style>
+
+</head>
+
+<body data-ng-controller="myController">
+
+  <label for="firstName">First Name: </label>
+  <input id="firstName" type="text" data-ng-model="firstName" />
+
+  <!-- Two-Way Binding -->
+  <label for="lastName">Last Name: </label>
+  <input id="lastName" type="text" data-ng-model="lastName" />
+  <p>Last Name entered: "{{lastName}}"</p>
+
+  <!-- Validate User Input -->
+  <form name="myForm">
+    <label for="formEmail">Email: </label>
+    <input id="formEmail" type="email" data-ng-model="email" />
+    <span data-ng-show="myForm.email.$error.email">This is not a valid email address</span>
+  </form>
+
+  <br />
+
+  <!-- Application Status -->
+  <form name="statusForm" data-ng-init="myText = 'myemail@example.com'">
+    <label for="statusEmail">Email: </label>
+    <input id="statusEmail" type="email" data-ng-model="myText" required />
+    <br /><br />
+    <strong>Valid: </strong>{{statusForm.email.$valid}}
+    <br /><br />
+    <strong>Dirty: </strong>{{statusForm.email.$dirty}}
+    <br /><br />
+    <strong>Touched: </strong>{{statusForm.email.$touched}}
+  </form>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+
+</body>
+</html>

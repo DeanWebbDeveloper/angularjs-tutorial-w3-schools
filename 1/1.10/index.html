@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Filters</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- Adding Filters to Expressions -->
+  <p>{{filterText}}</p>
+  <p>Upper Case: {{filterText | uppercase}}</p>
+  <p>Lower Case: {{filterText | lowercase}}</p>
+
+  <!-- Adding Filters to Directives -->
+  <ul>
+    <li data-ng-repeat="country in listOfCountries | orderBy">
+      {{country}}
+    </li>
+  </ul>
+
+  <!-- The currency Filter -->
+  <p>Price: {{price | currency}}</p>
+
+  <!-- The filter Filter -->
+  <ul>
+    <li data-ng-repeat="country in listOfCountries | filter: 'i'">
+      {{country}}
+    </li>
+  </ul>
+
+  <!-- Filter an Array Based on User Input -->
+  <label for="countryFilter">Country Filter: </label>
+  <input type="text" id="countryFilter" data-ng-model="userInputFilter" />
+
+  <ul>
+    <li data-ng-repeat="country in listOfCountries | filter: userInputFilter">
+      {{country}}
+    </li>
+  </ul>
+
+  <!-- Sort an Array Based on User Input -->
+  <table>
+    <thead>
+      <tr>
+        <th data-ng-click="orderByMe('name')">First Name</th>
+        <th data-ng-click="orderByMe('-age')">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="person in sortingObject | orderBy:myOrderBy">
+        <td>{{person.name}}</td>
+        <td>{{person.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Custom Filters -->
+  <ul class="my-filter">
+    <li data-ng-repeat="country in listOfCountries">
+      {{country | myFilter}}
+    </li>
+  </ul>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+  <script src="myFilter.js"></script>
+</body>
+</html>

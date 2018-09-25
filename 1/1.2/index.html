@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <title>AngularJS Intro</title>
+  <!-- AngularJS is a JavaScript Framework -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 </head>
 
 <body>
 
+  <!-- AngularJS Extends HTML -->
   <!--
   <div data-ng-app="">
 
     <label for="firstName">First Name: </label>
     <input name="firstName" type="text" data-ng-model="firstName" />
 
+  -->
+    <!-- AngularJS Directives -->
+    <!--
     <div name="lastName" type="text" data-ng-init="lastName='Smith'"></div>
 
     <p><span data-ng-bind="firstName"></span> <span data-ng-bind="lastName"></span></p>
 
+  -->
+    <!-- AngularJS Expressions -->
+  <!--
     <p>The following is an angular expression: {{ 2 * 10 }}</p>
 
     <label for="age">Age: </label>
@@ -26,15 +35,16 @@
   </div>
   -->
 
+  <!-- AngularJS Applications -->
   <div data-ng-app="myApp">
     <div data-ng-controller="myController">
       <label for="firstName">First Name: </label>
-      <input name="firstName" type="text" ng-model="firstName" />
+      <input id="firstName" type="text" data-ng-model="firstName" />
       &nbsp;
       <label for="lastName">Last Name: </label>
-      <input name="lastName" type="text" ng-model="lastName" />
+      <input id="lastName" type="text" data-ng-model="lastName" />
 
-      <p><span ng-bind="firstName"></span> <span>{{lastName}}</span></p>
+      <p><span data-ng-bind="firstName"></span> <span>{{lastName}}</span></p>
     </div>
   </div>
 

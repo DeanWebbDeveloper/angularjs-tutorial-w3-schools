@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Scope</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Root Scope -->
+  <p>Root Scope Color (before Controller): {{color}}</p>
+
+  <div data-ng-controller="myController">
+
+    <!-- How to Use the Scope? -->
+    <p>Brand: {{carBrand}}</p>
+
+    <!-- Understanding the Scope -->
+    <label for="carModel">Model: </label>
+    <input id="carModel" type="text" data-ng-model="carModel" />
+    <p>The car is a {{carBrand + " " + carModel}}</p>
+
+    <!-- Know Your Scope -->
+    <ul>
+      <li data-ng-repeat="name in names">
+        {{name}}
+      </li>
+    </ul>
+
+    <p>Color (in controller): {{color}}</p>
+
+  </div>
+
+  <p>Root Scope Color (after Controller): {{color}}</p>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+
+</body>
+</html>

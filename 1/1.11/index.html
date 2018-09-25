@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Services</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- What is a Service? -->
+  <p>My Url: {{myUrl}}</p>
+  <!-- The $http Service -->
+  <p>My Message: {{myWelcome}} <small>This will not work offline</small></p>
+  <!-- The $interval Service -->
+  <p>Time via $interval: {{theTime}}</p>
+  <!-- Create Your Own Service -->
+  <p>Hex: {{hex}}</p>
+
+  <p>Hex List with Filter:</p>
+  <ul>
+    <li data-ng-repeat="number in hexList">
+      {{number | myFilter}}
+    </li>
+  </ul>
+
+  <script src="myApp.js"></script>
+  <script src="myService.js"></script>
+  <script src="myFilter.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>

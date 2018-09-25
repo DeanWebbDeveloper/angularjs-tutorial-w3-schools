@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-GB" data-ng-app="myApp">
 <head>
+  <title>AngularJS Expressions</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 </head>
 
 <body data-ng-controller="myController">
 
+  <!-- AngularJS Expressions -->
   <p>{{ 2 * 45 }}</p>
 
   <input type="text" style="background-color: {{bgColor}}" data-ng-model="bgColor" placeholder="input background color"/>
 
+  <!-- AngularJS Numbers -->
   <div data-ng-init="quantity=12; cost=5">
     <p>Individual Cost: {{cost}}</p>
     <p>Quantity: {{quantity}}</p>
-    <p>Total Cost: £<span ng-bind="quantity * cost"></span></p>
+    <p>Total Cost: £<span data-ng-bind="quantity * cost"></span></p>
   </div>
 
+  <!-- AngularJS Strings -->
   <div data-ng-init="firstName='Jane'; lastName='Doe'">
     <p>The name is {{firstName + " " + lastName}}</p>
     <p>The name is <span data-ng-bind= "firstName + ' ' + lastName"></span></p>
   </div>
 
+  <!-- AngularJS Objects -->
   <div data-ng-init="person={firstName:'Matt', lastName:'Murdock'}">
       <p>{{person.firstName}} is Daredevil</p>
       <p>Mr. <span data-ng-bind="person.lastName"></span> is a lawyer</p>
   </div>
 
+  <!-- AngularJS Arrays -->
   <div data-ng-init="points=[4, 8, 15, 16, 23, 42]">
       <p>The 3rd Lost number is {{points[2]}}</p>
       <p>The 5th Lost number is <span data-ng-bind="points[4]"></span>
@@ -39,4 +45,4 @@
   </script>
 
 </body>
-<html>
+</html>

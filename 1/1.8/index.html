@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Controllers</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- AngularJS Controllers -->
+  <span>First Name: {{firstName}}</span>
+  <br/>
+  <span>Last Name: {{lastName}}</span>
+  <br/>
+
+  <!-- Controller Methods -->
+  <span>Full Name: {{fullName()}}</span>
+
+  <!-- Another Example -->
+  <ul data-ng-controller="namesController">
+    <li data-ng-repeat="person in names">
+      {{person.name + ', ' + person.country}}
+    </li>
+  </ul>
+
+  <!-- Controllers In External Files -->
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+  <script src="namesController.js"></script>
+
+</body>
+
+</html>

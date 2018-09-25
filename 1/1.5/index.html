@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Directives</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- AngularJS Directives -->
+  <div data-ng-init="firstName='Heather'"></div>
+
+  <label for="firstName">First Name: </label>
+  <input type="text" id="firstName" data-ng-model="firstName" />
+  <p>{{firstName}}</p>
+
+  <div data-ng-init="quantity=5;price=7"></div>
+
+  <label for="quantity">Quantity: </label>
+  <input type="number" step="1" id="quantity" data-ng-model="quantity" />
+  &nbsp;
+  <label for="price">Price: £</label>
+  <input type="number" step="0.01" id="price" data-ng-model="price" />
+
+  <!-- Data Binding -->
+  <p>Total Price: £{{quantity * price}}</p>
+
+  <!-- Repeating HTML Elements -->
+  <div data-ng-init="names=['Anthony', 'Chris', 'Katherine']">
+    <ul>
+      <li data-ng-repeat="name in names">
+        {{name}}
+      </li>
+    </ul>
+  </div>
+
+  <div data-ng-init="people=[
+    {name:'Anthony', age:26},
+    {name:'Chris', age:25},
+    {name:'Katherine', age:22}
+  ]">
+    <ul>
+      <li data-ng-repeat="person in people">
+        {{person.name + ", " + person.age}}
+      </li>
+    </ul>
+  </div>
+
+  <p>Tag: <my-directive></my-directive></p>
+  <p>Attribute: <span data-my-directive></span></p>
+  <p>Class: <span class="my-directive"></span> <small>Doesn't show for my directive unless restricted with 'C'</small></p>
+  <p>Comment: <!-- directive: my-directive --> <small>Doesn't work for my directive</small></p>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+  <script src="myDirective.js"></script>
+
+</body>
+</html>

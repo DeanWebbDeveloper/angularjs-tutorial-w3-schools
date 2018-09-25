@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Data Binding</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- HTML View -->
+  <p><span data-ng-bind="firstName"></span><span> {{lastName}}</span></p>
+
+  <!-- The ng-model Directive -->
+  <label for="modelFirstName">First Name: </label>
+  <input type="text" id="modelFirstName" data-ng-model="firstName" />
+  <p>{{firstName}}</p>
+
+  <br /><br />
+
+  <!-- Two-way Binding -->
+  <label for="bindingEmail">Email: </label>
+  <input type="email" id="bindingEmail" data-ng-model="email" />
+  <p>{{email}}</p>
+
+  <!-- AngularJS Controller -->
+  <h3 data-ng-click="changePerson()">{{firstName + " " + lastName}}, {{email}}</h3>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+
+</body>
+</html>
