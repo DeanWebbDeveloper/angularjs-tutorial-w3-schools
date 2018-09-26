@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS AJAX - $http</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- AngularJS $http -->
+  <!-- Methods -->
+  <p>The welcome message: {{myWelcome}}</p>
+
+  <!-- Properties -->
+  <p>Content: {{content}}</p>
+  <p>Status Code:{{status}}</p>
+  <p>Status Text:{{statusText}}</p>
+
+  <div data-ng-controller="customersController">
+    <h3>Customers</h3>
+    <ul>
+      <li data-ng-repeat="data in myData">
+        {{data.Name + ": " + data.City + ", " + data.Country}}
+      </li>
+    </ul>
+  </div>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+  <script src="customersController.js"></script>
+
+</body>
+</html>

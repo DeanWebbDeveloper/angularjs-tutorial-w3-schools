@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS SQL</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- Fetching Data From a PHP Server Running MySQL -->
+  <!-- Fetching Data From an ASP.NET Server Running SQL -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="name in names">
+        <td>{{name.Name}}</td>
+        <td>{{name.Country}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>

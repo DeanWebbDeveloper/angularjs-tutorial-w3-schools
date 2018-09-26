@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Select Boxes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+<body data-ng-controller="myController">
+
+  <!-- Creating a Select Box Using ng-options -->
+  <label for="ngOptionsSelect">Select list via ng-options</label>
+  <select id="ngOptionsSelect" data-ng-model="optionsSelectedName" data-ng-options="name for name in names">
+  </select>
+
+  <br /><br />
+
+  <!-- Creating a Select Box Using ng-options -->
+  <label for="ngRepeatSelect">Select list via ng-repeat</label>
+  <select id="ngRepeatSelect" data-ng-model="repeatSelectedName">
+    <option data-ng-repeat="name in names">{{name}}</option>
+  </select>
+
+  <br /><br />
+
+  <!-- What Do I Use? -->
+  <label for="ngRepeatCar">Car via ng-repeat</label>
+  <select id="ngRepeatCar" data-ng-model="repeatSelectedCar">
+    <option data-ng-repeat="car in cars" value="{{car.model}}">{{car.model}}</option>
+  </select>
+
+  <h4>You selected {{repeatSelectedCar}}. Cannot get its color</h4>
+
+  <label for="ngOptionsCar">Car via ng-options</label>
+  <select id="ngOptionsCar" data-ng-model="optionsSelectedCar" data-ng-options="car.model for car in cars">
+  </select>
+
+  <h4>You selected {{optionsSelectedCar.model}}. Its color is {{optionsSelectedCar.color}}.</h4>
+
+  <!-- The Data Source as an Object -->
+  <label for="car2">Car2</label>
+  <select id="car2" data-ng-model="selectedCar2" data-ng-options="key for (key, value) in cars2">
+  </select>
+
+  <h3>Selected car2: {{selectedCar2}}</h3>
+
+  <label for="car3">Car3</label>
+  <select id="car3" data-ng-model="selectedCar3" data-ng-options="value.brand for (key, value) in cars3">
+  </select>
+
+  <h3>Selected Car</h3>
+  <ul>
+    <li>Brand: {{selectedCar3.brand}}</li>
+    <li>Model: {{selectedCar3.model}}</li>
+    <li>Color: {{selectedCar3.color}}</li>
+  </ul>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>

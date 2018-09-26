@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Events</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+<body data-ng-controller="myController">
+
+  <!-- Mouse Events -->
+  <h1 data-ng-mouseover="count = count + 1">Hover over me</h1>
+  <p>Count: {{count}}</p>
+
+  <!-- The ng-click Directive -->
+  <h1 data-ng-click="count = count - 1">Click on me</h1>
+  <h1 data-ng-click="countReset()">Reset</h1>
+
+  <!-- Toggle, True/False -->
+  <button data-ng-click="toggle()">Toggle</button>
+  <br /><br />
+  <div data-ng-show="toggleSetting">
+    The toggle is set to {{toggleSetting}}.
+  </div>
+
+  <!-- $event Object -->
+  <div data-ng-mousemove="eventFunc($event)">Mousemove on me</div>
+
+  <p>Cursor Coordinates: {{xCoord + ", " + yCoord}}</p>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>

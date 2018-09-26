@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Tables</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+  <!-- Displaying with CSS Style -->
+<!--
+  <link rel="stylesheet" type="text/css" href="myStyle.css">
+-->
+</head>
+
+<body data-ng-controller="customersController">
+
+  <!-- Displaying Data in a Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Display with orderBy Filter -->
+      <tr data-ng-repeat = "name in names | orderBy: 'Country'">
+        <!-- Display the Table Index ($index) -->
+        <!-- Using $even and $odd -->
+        <td data-ng-if="$even">{{$index + 1}}</td>
+        <td data-ng-if="$odd" style="background-color: #f1f1f1">{{$index + 1}}</td>
+        <td data-ng-if="$even">{{name.Name}}</td>
+        <td data-ng-if="$odd" style="background-color: #f1f1f1">{{name.Name}}</td>
+        <td data-ng-if="$even">{{name.City}}</td>
+        <td data-ng-if="$odd" style="background-color: #f1f1f1">{{name.City}}</td>
+        <!-- Display with uppercase Filter -->
+        <td data-ng-if="$even">{{name.Country | uppercase}}</td>
+        <td data-ng-if="$odd" style="background-color: #f1f1f1">{{name.Country | uppercase}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="myApp.js"></script>
+  <script src="customersController.js"></script>
+</body>
+</html>

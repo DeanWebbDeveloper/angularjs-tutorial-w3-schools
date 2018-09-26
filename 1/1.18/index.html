@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Forms</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+<body data-ng-controller="myController">
+
+  <!-- Data-Binding -->
+  <input type="text" data-ng-model="firstName" />
+  <input type="submit" />
+
+  <p>The first name has been copied here: {{firstName}}, through data-binding.</p>
+
+  <!-- Checkbox -->
+  <form>
+    <label for="check">Check</label>
+    <input id="check" type="checkbox" data-ng-model="checkVal" />
+  </form>
+
+  <p data-ng-show="checkVal">
+    By using ng-show here with the checkbox having an ng-model directive, the
+    two have been bound together. Check boxes are either true or false, so that
+    carries through here.
+  </p>
+
+  <!-- Radiobuttons -->
+  <form>
+    <input type="radio" name="myRadio" data-ng-model="myRadio" value="Alpha"/> Alpha
+    <input type="radio" name="myRadio" data-ng-model="myRadio" value="Bravo"/> Bravo
+    <input type="radio" name="myRadio" data-ng-model="myRadio" value="Charlie"/> Charlie
+    <input type="radio" name="myRadio" data-ng-model="myRadio" value="Delta"/> Delta
+  </form>
+
+  <p>{{myRadio}}</p>
+
+  <!-- Selectbox -->
+  <form>
+    <select data-ng-model="mySelect">
+      <option value="1">1</opion>
+      <option value="2">2</opion>
+      <option value="3">3</opion>
+      <option value="4">4</opion>
+      <option value="5">5</opion>
+    </select>
+  </form>
+
+  <p>{{mySelect}}</p>
+
+  <!-- An AngularJS Form Example -->
+  <form novalidate>
+    <label for="firstName">First Name</first>
+    <input type="text" id="firstName" data-ng-model="user.firstName" />
+    <br />
+    <label for="lastName">Last Name</first>
+    <input type="text" id="lastName" data-ng-model="user.lastName" />
+    <button data-ng-click="reset()">Reset</button>
+  </form>
+
+  <p>Person: {{user}}</p>
+  <p>Master: {{master}}</p>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>
