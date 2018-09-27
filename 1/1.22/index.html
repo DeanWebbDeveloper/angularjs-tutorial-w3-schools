@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Includes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- AngularJS Includes -->
+  <p>ng-inlcude only works if on the server, not from the browser</p>
+  <div data-ng-include="'myFile.htm'"></div>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>

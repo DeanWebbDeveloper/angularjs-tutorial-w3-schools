@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Form Validation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-ng-controller="myController">
+
+  <!-- Required -->
+  <form name="myForm">
+    <label for="myInput">Input: </label>
+    <input id="myInput" name="myInput" data-ng-model="myInput" required />
+    <br /><br />
+    <!-- E-mail -->
+    <label for="myEmail">Email: </label>
+    <input id="myEmail" type="email" name="myEmail" data-ng-model="myEmail" />
+    <br /><br />
+    <!-- Form State and Input State -->
+    <label for="myName">Name: </label>
+    <input id="myName" name="myName" data-ng-model="myName" required />
+    <br/><br />
+    <!-- Custom Validation -->
+    <label for="myCustom">Custom Validation: </label>
+    <input id="myCustom" name="myCustom" data-ng-model="myCustom" required data-my-directive />
+  </form>
+
+  <!-- Required -->
+  <p>Input Valid State: {{myForm.myInput.$valid}}</p>
+  <!-- E-mail -->
+  <p>Input Valid Email: {{myForm.myEmail.$valid}}</p>
+  <!-- Form State and Input State -->
+  <p data-ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</p>
+
+  <form name="exampleForm" novalidate>
+    <label for="userName">Username: </label>
+    <input id="userName" type="text" name="userName" data-ng-model="userName" required/>
+    <span data-ng-show="exampleForm.userName.$dirty && exampleForm.userName.$invalid">You must include a username</span>
+    <br /><br />
+    <label for="userEmail">Email: </label>
+    <input id="userEmail" type="email" name="userEmail" data-ng-model="userEmail" required/>
+    <span data-ng-show="exampleForm.userEmail.$touched && exampleForm.userEmail.$invalid">You must include an valid email</span>
+    <br /><br />
+    <input type="submit" data-ng-disabled="exampleForm.userName.$invalid || exampleForm.userEmail.$invalid" value="Submit" />
+  </form>
+
+
+
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+  <!-- Custom Validation -->
+  <script src="myDirective.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS API</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body data-ng-controller="myController">
+
+  <!-- angular.lowercase() -->
+  <p>Original: {{word}}</p>
+  <br />
+  <p>Set to lowercase: {{lowerCaseWord}}</p>
+  <p>angular.lowercase() has been deprecated</p>
+  <br/>
+  <!-- angular.uppercase() -->
+  <p>Set to uppercase: {{upperCaseWord}}</p>
+  <p>angular.uppercase() has been deprecated</p>
+  <br/>
+  <!-- angular.isString() -->
+  <p>Check if isString: {{wordIsString}}</p>
+  <br />
+  <!-- angular.isNumber() -->
+  <p>Check if isNumber: {{wordIsNumber}}</p>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>
