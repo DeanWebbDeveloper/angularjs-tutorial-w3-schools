@@ -1,0 +1,32 @@
+/* CSS Transitions */
+/*
+div {
+  transition: all linear 0.2s;
+  background-color: lightblue;
+  height: 100px;
+  width: 100px;
+}
+
+.ng-hide {
+  height: 0;
+}
+*/
+
+/* CSS Animations */
+@keyframes myChange {
+  from {
+    height: 100px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+div {
+  height: 100px;
+  background-color: lightblue;
+}
+
+div.ng-hide {
+  animation: 0.5s myChange;
+}

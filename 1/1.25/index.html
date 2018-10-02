@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Application</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+<!-- Step 1. Getting Started: -->
+<body data-ng-controller="myController">
+
+  <ul>
+    <li data-ng-repeat="product in products">
+      {{product}}
+      <!-- Step 3. Removing Items: -->
+      <span data-ng-click="removeItem($index)">&times;</span>
+    </li>
+  </ul>
+
+  <!-- Step 2. Adding Items: -->
+  <input type="text" data-ng-model="addMe" />
+  <button data-ng-click="addItem()">Add</button>
+
+  <p>{{errortext}}</p>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>

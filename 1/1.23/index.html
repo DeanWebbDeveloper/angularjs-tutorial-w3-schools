@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-ng-app="myApp">
+<head>
+  <title>AngularJS Animations</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+  <!-- What do I Need? -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-animate.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-ng-controller="myController">
+
+  <!-- What is an Animation? -->
+  Hide the div: <input type="checkbox" data-ng-model="myCheck" />
+  <div data-ng-hide="myCheck"></div>
+
+  <script src="myApp.js"></script>
+  <script src="myController.js"></script>
+</body>
+</html>
