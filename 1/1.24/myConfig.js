@@ -20,6 +20,6 @@ app.config(function($routeProvider) {
     })
     // The otherwise method
     .otherwise({
-      template:     "<h1>None</h1><p>Nothing has been selected</p>";
+      template:     "<h1>None</h1><p>Nothing has been selected</p>"
     });
 });
